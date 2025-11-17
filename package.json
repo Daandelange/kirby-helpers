@@ -2,7 +2,10 @@
   "name": "daans-kirby-helpers",
   "version": "0.0.1",
   "description": "My personal helpers for Kirby",
-  "main": "panel/index.js",
+  "exports": {
+      ".": "./panel/index.js",
+      "./modules": "./panel/modules.js"
+  },
   "author": "Daan de Lange",
   "license": "MIT",
   "repository": "https://github.com/Daandelange/kirby-helpers",
