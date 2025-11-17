@@ -1,5 +1,5 @@
 {
-  "name": "daandelange/helpers",
+  "name": "daans-kirby-helpers",
   "version": "0.0.1",
   "description": "My personal helpers for Kirby",
   "main": "panel/index.js",
