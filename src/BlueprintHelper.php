@@ -9,6 +9,8 @@ use \Kirby\Cms\Blueprint;
 use \Kirby\Panel\Field as PanelField;
 use \Kirby\Exception\InvalidArgumentException;
 
+use \Daandelange\Taxonomy\TaxonomyHelper;
+
 class BlueprintHelper {
     // Returns the field blueprint or throws with fail reason
     public static function getFieldBlueprint(ContentField $field, bool $returnParsed=false) : array {
@@ -89,22 +91,4 @@ class BlueprintHelper {
         return Blueprint::fieldProps($field);
     }
 
-    public static function sanitizeTranslatedStructureFieldsProps(array $fields) : array {
-        // Apply some extra sanitisations
-        foreach($fields as &$field){
-            // Enforce unique
-            $field['unique'] = $field['unique'] ?? false;
-
-            // These have triggered some Kirby structure field errors for not being explicitly set
-            $field['hidden'] = $field['hidden']??false;
-            $field['saveable'] = $field['saveable']??true;
-
-            // Split over width (aka all languages on one line)
-            if( $field['spreadlangsoverwidth']??false ){
-                $field['width'] = '1/'.kirby()->languages()->count();
-            }
-        }
-
-        return $fields;
-    }
 }

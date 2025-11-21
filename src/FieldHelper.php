@@ -16,13 +16,15 @@ use \Daandelange\Helpers\BlueprintHelper;
 use \Closure;
 
 class FieldHelper {
-    // Transforms a content field to a form field
+    // Experimental! : Transforms a content field to a form field
     // Note: this doesn't set the sibling values, 3rd argument to factory()
     public static function getFormFieldFromCmsField(ContentField $field): FormField | FormFieldClass {
-        $bp = BlueprintHelper::getFieldBlueprint($field);
-        $blueprintData = $bp ? Blueprint::fieldProps($bp) : [];
+        $blueprintData = BlueprintHelper::getFieldBlueprint($field, true);
         $blueprintData['model'] = $field->model();
+        $blueprintData['value'] = $field->value(); // Works... but maybe better to use $field->fill($value) afterwards ?
         $blueprintData['name'] = $field->name();
+
+        // WARNING: every call builds a new form field... How to grab it from pages ? Better cache this !
         return FormField::factory($blueprintData['type'], $blueprintData);
     }
 
