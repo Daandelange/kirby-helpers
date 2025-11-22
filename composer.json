@@ -19,6 +19,11 @@
     "require": {
         "getkirby/composer-installer": "^1.1"
     },
+    "autoload": {
+        "psr-4": {
+            "Daandelange\\Helpers\\": "src/"
+        }
+    },
     "scripts": {
 
     },

@@ -22,7 +22,7 @@ class FieldHelper {
         $blueprintData = BlueprintHelper::getFieldBlueprint($field, true);
         $blueprintData['model'] = $field->model();
         $blueprintData['value'] = $field->value(); // Works... but maybe better to use $field->fill($value) afterwards ?
-        $blueprintData['name'] = $field->name();
+        $blueprintData['name'] = $field->key();
 
         // WARNING: every call builds a new form field... How to grab it from pages ? Better cache this !
         return FormField::factory($blueprintData['type'], $blueprintData);
