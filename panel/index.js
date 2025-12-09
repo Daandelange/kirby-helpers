@@ -1,5 +1,9 @@
+import { usePanel  } from "kirbyuse";
+const panel = usePanel;
 
-import { invertCustomAndNativeFunctionsMixin } from "./mixins/InvertCustomAndNativeMethods.js";
+// For now we only provide modules which you can import.
+// Register the plugin name (empty) anyways.
 
 panel.plugin("daandelange/helpers", {
+    
 });
