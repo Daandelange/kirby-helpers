@@ -1,6 +1,6 @@
 {
   "name": "daans-kirby-helpers",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "My personal helpers for Kirby",
   "exports": {
       ".": "./panel/index.js",
@@ -18,7 +18,8 @@
     "recognizeSelfClosing": true
   },
   "devDependencies": {
-    "kirbyup": "^2.2.1"
+    "kirbyup": "^2.2.1",
+    "kirbyuse": "^1.1.0"
   },
   "dependencies": {
 
