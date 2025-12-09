@@ -54,7 +54,7 @@ class FieldHelper {
     // Dynamic runtime way of calling native kirby field functions as they are in the kirby installation.
     // Useful to handle inheritance in kirby 'extends' overrides where parent::sameFunction() inheritance is not available.
     // Note: not good for performance, parses the functions from data file on each first call, then uses cached function !!!
-    protected static function nativeFieldFunction(string $fromFieldType, string $functionName, FormField $field, ?Closure $fallback = null, ...$args ) {
+    public static function nativeFieldFunction(string $fromFieldType, string $functionName, FormField $field, ?Closure $fallback = null, ...$args ) {
         // Create Cache
         static $importedFunctions = [];
         // Build cache key
